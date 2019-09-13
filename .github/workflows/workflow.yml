@@ -11,16 +11,14 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
 
-    - name: no tag
-      uses: nuxt/actions-yarn@node-10
-      with:
-        args: "config set version-commit-hooks false"
-       
-    - name: no tag
-      uses: nuxt/actions-yarn@node-10
-      with:
-        args: "version --patch"
-      
+    - name: Set Node.js 10.x
+      uses: actions/setup-node@master
+    
+    - name: Bump Version
+      run: |
+        npm config set git-tag-version false
+        npm version patch
+        
     - uses: stefanzweifel/git-auto-commit-action@v2.0.0
       with:
         commit_author_email: github@action.com
