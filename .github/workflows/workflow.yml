@@ -13,5 +13,6 @@ jobs:
       with:
         version: 10.x
 
-    - name: npm install
-      run: npm install
+    - name: Bump Version
+      run: npm version patch
+      
