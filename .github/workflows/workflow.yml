@@ -13,6 +13,11 @@ jobs:
       with:
         version: 10.x
 
+    - name: Define git
+      run: |
+        git config --global user.name 'Github Actions'
+        git config --global user.email 'github@action.com'
+        
     - name: Bump Version
       run: npm version patch
       
