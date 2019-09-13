@@ -14,7 +14,7 @@ jobs:
         version: 10.x
 
     - name: Bump Version
-      run: npm npm --no-git-tag-version version patch
+      run: npm --no-git-tag-version version patch
       
     - uses: stefanzweifel/git-auto-commit-action@v2.0.0
       with:
