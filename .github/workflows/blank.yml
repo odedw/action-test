@@ -1,0 +1,26 @@
+name: Bump patch
+
+on: 
+  push:
+    branches:
+    - mas
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Set Node.js 10.x
+      uses: actions/setup-node@master
+      with:
+        version: 10.x
+        
+    - name: Bump patch
+      run: npm version patch
+      
+    - name: commit and push
+      run: git add package.json && git commit -m "Bump patch" && git push
