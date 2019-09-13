@@ -21,3 +21,6 @@ jobs:
     - name: Bump Version
       run: npm version patch
       
+    - name: commit and push
+      run: git push
+      
