@@ -19,8 +19,5 @@ jobs:
       with:
         version: 10.x
         
-    - name: Bump patch
+    - name: Bump patch and commit
       run: npm version patch
-      
-    - name: commit and push
-      run: git add package.json && git commit -m "Bump patch" && git push
